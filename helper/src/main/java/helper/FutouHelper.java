@@ -43,12 +43,7 @@ public class FutouHelper {
             System.out.println("当前第" + executeCount + "次执行!");
 
             // 执行ADB命令，获取截图，上传到电脑并打开
-            HelperUtils.screenshotAndUpload(IMAGE_NAME);
-            File currentImage = HelperUtils.getScreenshotFile(IMAGE_NAME);
-            HelperUtils.recordPictureHistory(executeCount, currentImage);
-
-            // 读取截图文件
-            BufferedImage bufferedImage = ImageIO.read(currentImage);
+            BufferedImage bufferedImage = HelperUtils.screenshotAndUpload(IMAGE_NAME);
             int width = bufferedImage.getWidth();
             int height = bufferedImage.getHeight();
             if (HelperUtils.DEBUG_INFO_SWITCH_ON) {
