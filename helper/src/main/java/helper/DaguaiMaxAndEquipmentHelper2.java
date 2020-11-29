@@ -82,6 +82,7 @@ public class DaguaiMaxAndEquipmentHelper2 {
                     continue;
                 }
 
+                HelperUtils.executeTouchWithSleep(550, 750); // 当广告没看完中途退出时，关闭广告
                 HelperUtils.executeTouchWithSleep(560, 465); // 挑战
                 stopClick = false;
                 HelperUtils.executeTouchWithSleep(60, 370); // 开始点击
