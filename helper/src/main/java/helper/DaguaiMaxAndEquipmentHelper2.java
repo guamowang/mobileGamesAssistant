@@ -27,7 +27,7 @@ public class DaguaiMaxAndEquipmentHelper2 {
     private static final RgbInfo BLACK_BACKGROUND = new RgbInfo(20, 20, 20);
     private static boolean bagFull = false;
     private static final boolean FETCH_EQUIPMENT = true;
-    private static final boolean WITH_ADVER = true;
+    private static final boolean WITH_ADVER = false;
 
     /**
      * 启动方法
@@ -61,7 +61,7 @@ public class DaguaiMaxAndEquipmentHelper2 {
             }
 
             // 看广告
-            if (WITH_ADVER && HelperUtils.isWhitePoint(bufferedImage, 240, 395) && !HelperUtils.isWhitePoint(bufferedImage, 977, 527)) {
+            if (WITH_ADVER && HelperUtils.isWhitePoint(bufferedImage, 240, 395) && !HelperUtils.isWhitePoint(bufferedImage, 975, 520)) {
                 stopClick = true;
                 HelperUtils.executeTouchWithSleep(60, 370); // 停止点击
                 HelperUtils.executeTouchWithSleep(300, 1300); // 确认现金领取
@@ -125,8 +125,8 @@ public class DaguaiMaxAndEquipmentHelper2 {
      * @return
      */
     private static boolean needReborn(BufferedImage bufferedImage) {
-        if ((HelperUtils.pointMatchColor(bufferedImage, 300, 280, BLOOD_HAS1) || HelperUtils.pointMatchColor(bufferedImage, 300, 280, BLOOD_HAS2))
-                && (HelperUtils.pointMatchColor(bufferedImage, 800, 280, BLOOD_NOT_HAS1) || HelperUtils.pointMatchColor(bufferedImage, 800, 280, BLOOD_NOT_HAS2))) {
+        if ((HelperUtils.pointMatchColor(bufferedImage, 400, 280, BLOOD_HAS1) || HelperUtils.pointMatchColor(bufferedImage, 400, 280, BLOOD_HAS2))
+                && (HelperUtils.pointMatchColor(bufferedImage, 700, 280, BLOOD_NOT_HAS1) || HelperUtils.pointMatchColor(bufferedImage, 700, 280, BLOOD_NOT_HAS2))) {
             return true;
         }
         return HelperUtils.pointMatchColor(bufferedImage, 560, 465, RED_EYE);
