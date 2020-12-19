@@ -27,7 +27,7 @@ public class DaguaiMaxAndEquipmentHelper2 {
     private static final RgbInfo BLACK_BACKGROUND = new RgbInfo(20, 20, 20);
     private static boolean bagFull = false;
     private static final boolean FETCH_EQUIPMENT = true;
-    private static final boolean WITH_ADVER = false;
+    private static final boolean WITH_ADVER = true;
 
     /**
      * 启动方法
@@ -110,11 +110,7 @@ public class DaguaiMaxAndEquipmentHelper2 {
     private static void cleanEquipment() throws InterruptedException {
         HelperUtils.executeTouchWithSleep(600, 2200); // 装备
         HelperUtils.executeTouchWithSleep(1000, 1200); // 打开一键分解
-        HelperUtils.executeTouchWithSleep(550, 900); // 分解所有普通装备
-        HelperUtils.executeTouchWithSleep(550, 1000); // 分解所有优秀装备
-        HelperUtils.executeTouchWithSleep(550, 1050); // 分解所有精良装备
-        HelperUtils.executeTouchWithSleep(550, 1350); // 分解所有稀有装备
-        HelperUtils.executeTouchWithSleep(550, 1500); // 分解所有卓越装备
+        HelperUtils.executeTouchWithSleep(550, 1500); // 分解所有指定装备
         HelperUtils.executeTouchWithSleep(550, 650); // 关闭一键分解
         HelperUtils.executeTouchWithSleep(100, 2200); // 我
     }
