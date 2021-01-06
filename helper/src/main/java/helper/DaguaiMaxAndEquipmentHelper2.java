@@ -18,6 +18,7 @@ public class DaguaiMaxAndEquipmentHelper2 {
     private static final RgbInfo CAN_REBORN2 = new RgbInfo(115, 89, 33);
     private static final RgbInfo BLACK = new RgbInfo(0, 0, 0);
     private static final RgbInfo BAG_FULL = new RgbInfo(181, 57, 41);
+    private static final RgbInfo BAG_FULL2 = new RgbInfo(189, 60, 41);
     private static final RgbInfo BLOOD_HAS1 = new RgbInfo(255, 93, 0);
     private static final RgbInfo BLOOD_HAS2 = new RgbInfo(255, 89, 0);
     private static final RgbInfo BLOOD_NOT_HAS1 = new RgbInfo(16, 57, 82);
@@ -27,7 +28,7 @@ public class DaguaiMaxAndEquipmentHelper2 {
     private static final RgbInfo BLACK_BACKGROUND = new RgbInfo(20, 20, 20);
     private static boolean bagFull = false;
     private static final boolean FETCH_EQUIPMENT = true;
-    private static final boolean WITH_ADVER = true;
+    private static final boolean WITH_ADVER = false;
 
     /**
      * 启动方法
@@ -89,7 +90,8 @@ public class DaguaiMaxAndEquipmentHelper2 {
             }
 
 
-            if (FETCH_EQUIPMENT && !bagFull && HelperUtils.pointMatchColor(bufferedImage, 530, 1330, BAG_FULL)) {
+            if (FETCH_EQUIPMENT && !bagFull &&
+                    (HelperUtils.pointMatchColor(bufferedImage, 530, 1330, BAG_FULL) || HelperUtils.pointMatchColor(bufferedImage, 530, 1330, BAG_FULL2))) {
                 stopClick = true;
                 Thread.sleep(1000);
                 HelperUtils.executeTouchWithSleep(300, 1300); // 确认现金领取
